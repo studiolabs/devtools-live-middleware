@@ -1,0 +1,17 @@
+{
+  "name": "devtools-live-middleware",
+  "version": "0.0.1",
+  "description": "Middleware to use Devtools Live",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:StudioLabs/devtools-live-middleware.git"
+  },
+  "main": "index.js",
+  "author": "StudioLabs",
+  "dependencies": {
+    "memory-fs": "^0.3.0",
+    "mime": "^1.3.4",
+    "parseurl": "^1.3.0"
+  },
+  "devDependencies": {}
+}
