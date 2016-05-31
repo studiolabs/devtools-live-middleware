@@ -41,6 +41,8 @@ module.exports = function(root, options) {
 
 		      	}
 	    	}
+
+	    	 var total = stat.size;
 	    }
 
 		}catch(e){
@@ -73,9 +75,6 @@ module.exports = function(root, options) {
 		}
 
 
-	var stat = fs.statSync(path);
-	  var total = stat.size;
-
 	  if (req.headers.range) {   // meaning client (browser) has moved the forward/back slider
 	                                         // which has sent this request back to this server logic ... cool
 	    var range = req.headers.range;
@@ -87,7 +86,7 @@ module.exports = function(root, options) {
 	    var end = partialend ? parseInt(partialend, 10) : total-1;
 	    var chunksize = (end-start)+1;
 
-	    var file = fs.createReadStream(path, {start: start, end: end});
+	    var file = fs.createReadStream(filepath, {start: start, end: end});
 	    res.writeHead(206, { 'Content-Range': 'bytes ' + start + '-' + end + '/' + total, 'Accept-Ranges': 'bytes', 'Content-Length': chunksize, 'Content-Type': contentType });
 	    file.pipe(res);
 
