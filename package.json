@@ -1,6 +1,6 @@
 {
   "name": "devtools-live-middleware",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Middleware to use Devtools Live",
   "repository": {
     "type": "git",
